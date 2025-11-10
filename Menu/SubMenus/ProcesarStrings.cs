@@ -28,7 +28,7 @@ namespace ACT_MI.SubMenus
                             break;
 
                         case 2:
-                            
+                            Buscar();
                             break;
 
                         case 3:
@@ -67,6 +67,47 @@ namespace ACT_MI.SubMenus
             string resultado = texto1 + " " + texto2;
 
             Console.WriteLine($"Texto concatenado: {resultado}");
+        }
+        private void Buscar()
+        {
+            Console.Write("Ingrese una frase: ");
+            string frase = Console.ReadLine();
+
+            Console.Write("Ingrese la palabra a buscar: ");
+            string palabra = Console.ReadLine();
+
+            if (frase.Contains(palabra))
+            {
+                Console.WriteLine("La palabra fue encontrada en la frase.");
+            }
+            else
+            {
+                Console.WriteLine("La palabra NO se encuentra en la frase.");
+            }
+
+            string palabraMinus = palabra.ToLower();
+            int a = 0, e = 0, i = 0, o = 0, u = 0;
+
+            foreach (char c in palabraMinus)
+            {
+                switch (c)
+                {
+                    case 'a': a++; break;
+                    case 'e': e++; break;
+                    case 'i': i++; break;
+                    case 'o': o++; break;
+                    case 'u': u++; break;
+                }
+            }
+
+            int totalVocales = a + e + i + o + u;
+
+            Console.WriteLine($"\nLa palabra \"{palabra}\" tiene {totalVocales} vocal(es):");
+            Console.WriteLine($"a = {a}");
+            Console.WriteLine($"e = {e}");
+            Console.WriteLine($"i = {i}");
+            Console.WriteLine($"o = {o}");
+            Console.WriteLine($"u = {u}");
         }
     }
 }
