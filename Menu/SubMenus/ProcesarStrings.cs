@@ -32,7 +32,7 @@ namespace ACT_MI.SubMenus
                             break;
 
                         case 3:
-                            
+                            Formato();
                             break;
 
                         case 4:
@@ -108,6 +108,14 @@ namespace ACT_MI.SubMenus
             Console.WriteLine($"i = {i}");
             Console.WriteLine($"o = {o}");
             Console.WriteLine($"u = {u}");
+        }
+        private void Formato()
+        {
+            Console.Write("Ingrese un texto: ");
+            string texto = Console.ReadLine();
+
+            Console.WriteLine("Texto en mayúsculas: " + texto.ToUpper());
+            Console.WriteLine("Texto en minúsculas: " + texto.ToLower());
         }
     }
 }
